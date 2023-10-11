@@ -82,7 +82,7 @@ for (let i = 0; i < klubSepakbola.length; i++) {
   daftarKlub.appendChild(klubItem);
 }
 
-// Nama-nama Buah
+// While
 const buah = ["Apel", "Semangka", "Jeruk", "Melon", "Pisang"];
 let buahText = "";
 let i = 0;

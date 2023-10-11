@@ -15,7 +15,27 @@ if (nilai >= 85) {
 }
 
 let hasilPesan = `Nilai Anda: ${nilai}<br>Nilai Huruf: ${nilaiHuruf}`;
-document.getElementById("ifelse").innerHTML = hasilPesan;
+document.getElementById("nilai").innerHTML = hasilPesan;
+
+// Nested If
+const hari = "Minggu";
+const cuacaHujan = true;
+
+let pesan = "";
+
+if (hari === "Minggu") {
+  if (cuacaHujan) {
+    pesan =
+      "Hari Minggu pagi hujan adalah waktu yang tepat untuk makan Indomie!";
+  } else {
+    pesan =
+      "Hari Minggu yang cerah adalah waktu yang sempurna untuk piknik bersama keluarga.";
+  }
+} else {
+  pesan = "Hari ini bukan hari Minggu, jadi berencana sesuai dengan hari Anda.";
+}
+
+document.getElementById("hasilAktivitas").textContent = pesan;
 
 //Switch Case
 function hitungBiayaParkir() {
@@ -42,10 +62,10 @@ function hitungBiayaParkir() {
       ? `Biaya parkir untuk ${jenisKendaraan} adalah Rp ${biayaParkir}.`
       : "Pilihan kendaraan tidak valid.";
 
-  document.getElementById("switchcase").textContent = hasil;
+  document.getElementById("kendaraan").textContent = hasil;
 }
 
-//
+//For Statement
 const klubSepakbola = [
   "Arsenal",
   "Chelsea",
@@ -61,3 +81,41 @@ for (let i = 0; i < klubSepakbola.length; i++) {
   klubItem.textContent = klubSepakbola[i];
   daftarKlub.appendChild(klubItem);
 }
+
+// Nama-nama Buah
+const buah = ["Apel", "Semangka", "Jeruk", "Melon", "Pisang"];
+let buahText = "";
+let i = 0;
+
+while (i < buah.length) {
+  buahText += buah[i] + "<br>";
+  i++;
+}
+
+document.getElementById("buah").innerHTML = buahText;
+
+// Do While
+let text = "";
+let j = 1;
+
+do {
+  text += j + "<br>";
+  j++;
+} while (j < 6);
+
+document.getElementById("angka").innerHTML = text;
+
+// Function
+function getGreeting() {
+  const hour = new Date().getHours();
+  if (hour < 12) {
+    return "Good morning";
+  } else if (hour < 18) {
+    return "Good afternoon";
+  } else {
+    return "Good evening";
+  }
+}
+
+const greeting = getGreeting();
+document.getElementById("waktu").innerHTML = greeting;
